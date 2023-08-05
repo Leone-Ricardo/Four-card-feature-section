@@ -52,6 +52,7 @@ p {
   position: relative;
   /* overflow: hidden; */
   margin: 15px;
+  flex-basis: calc(33.33% - 30px);
   width: 350px;
   border-top: 5px solid;
 }
@@ -91,4 +92,22 @@ p {
 }
 .attribution a {
   color: hsl(0, 100%, 50%);
+}
+/* Media query para telas entre 1140px e 760px */
+@media (max-width: 1130px) and (min-width: 760px) {
+  .page2 {
+    flex-direction: column; /* Altere o justify-content para flex-start */
+  }
+
+  .box {
+    flex-basis: calc(50% - 30px); /* Ajuste a largura base para 50% */
+  }
+}
+
+/* Media query para telas menores que 760px */
+@media (max-width: 760px) {
+  .box {
+    flex-direction: column;
+    width: auto; /* Altere a largura base para 100% */ /* Remova a largura máxima para as boxes se ajustarem */
+  }
 }
